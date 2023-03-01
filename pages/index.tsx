@@ -1,16 +1,29 @@
+import { GetStaticProps, NextPage } from 'next';
 import { Layout } from '@/components/layouts'
-import { Button } from '@nextui-org/react'
-import { Inter } from 'next/font/google'
 
-
-const inter = Inter({ subsets: ['latin'] })
-
-export default function HomePage() {
+const HomePage: NextPage = (props) => {
+  console.log(props)
   return (
     <Layout title="Listado de pokemons">
-      <Button color="gradient">
-        Hola mundo
-      </Button>
+      <ul>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+        <li>Pokemon</li>
+      </ul>
     </Layout>
   )
 }
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  // const { data } = await  // your fetch function here 
+  console.log('Hola mundo')
+  return {
+    props: {
+      
+    }
+  }
+}
+export default HomePage
