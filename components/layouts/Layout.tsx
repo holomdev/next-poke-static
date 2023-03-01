@@ -1,5 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from "react"
 import Head from "next/head"
+import { Nabvar } from '../ui';
 
 interface Props {
   title?: string
@@ -15,9 +16,11 @@ export const Layout: FunctionComponent<PropsWithChildren<Props>> = ({ children, 
         <meta name="keywords" content={`${title}, pokemon, pokedex`} />
       </Head>
 
-      {/* Navbar */}
+      <Nabvar />
 
-      <main>
+      <main style={{
+        padding: '0px 20px'
+      }}>
         { children }
       </main>
     </>
