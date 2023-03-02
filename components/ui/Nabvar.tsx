@@ -1,5 +1,6 @@
-import { Spacer, Text, useTheme } from '@nextui-org/react'
+import { Spacer, Text, useTheme, Link } from '@nextui-org/react'
 import Image from 'next/image'
+import NextLink from 'next/link' 
 import React from 'react'
 
 export const Nabvar = () => {
@@ -13,7 +14,7 @@ export const Nabvar = () => {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'start',
-      padding: '0x 20px',
+      padding: '0 20px',
       backgroundColor: theme?.colors.gray100.value
     }}>
 
@@ -24,12 +25,20 @@ export const Nabvar = () => {
         height={70}
       />
 
-      <Text color='white' h2>P</Text>
-      <Text color='white' h3>okemon</Text>
+      <NextLink legacyBehavior href="/" passHref>
+        <Link>
+          <Text color='white' h2>P</Text>
+          <Text color='white' h3>okemon</Text>
+        </Link>
+      </NextLink>
 
       <Spacer css={{ flex: 1 }}/>
-
-      <Text color='white'>Favoritos</Text>
+      
+      <NextLink legacyBehavior href="/favorites" passHref>
+          <Link>
+            <Text color='white'>Favoritos</Text>
+          </Link>
+      </NextLink>
     </div>
   )
 }
